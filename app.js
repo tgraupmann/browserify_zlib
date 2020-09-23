@@ -1,4 +1,3 @@
-fs = require('fs');
 zlib = require('zlib');
 
 const file = 'json.gz';
@@ -14,34 +13,20 @@ function testCompression() {
     } else {
       compressedData = content;
       console.log('compressedData', compressedData.toString());
-      fs.writeFile(file, content, function (err) {
-        if (err) {
-          console.log(err);
-          return;
-        } else {
-          testDecompression();
-        }
-      });
+      testDecompression();
     }
   });
 }
 
 function testDecompression() {
-  fs.readFile(file, function (err, data) {
-    fs.unlink(file, function () {});
+  zlib.gunzip(compressedData, {chunkSize: 65536}, function (err, data) {
     if (err) {
       console.log('error', err);
       return;
+    } else {
+      var uncompressedResult = data.toString();
+      console.log('uncompressedResult', uncompressedResult);
     }
-    zlib.gunzip(data, {chunkSize: 65536}, function (err, data) {
-      if (err) {
-        console.log('error', err);
-        return;
-      } else {
-        var uncompressedResult = data.toString();
-        console.log('uncompressedResult', uncompressedResult);
-      }
-    });
   });
 }
 
