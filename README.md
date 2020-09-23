@@ -6,11 +6,15 @@
 
 Browser takes an argument to your NodeJS script/module and then just pipe that to output a Javascript file.
 
-```browserify app.js > bundle.js```
+```
+browserify app.js > bundle.js
+```
 
 * Now include the `bundle.js` in your HTML.
 
-```<script src="bundle.js"></script>
+```
+<script src="bundle.js"></script>
+```
 
 ## Try it
 
