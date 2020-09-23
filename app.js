@@ -1,6 +1,5 @@
 zlib = require('zlib');
 
-const file = 'json.gz';
 var compressedData = undefined;
 
 function testCompression() {
