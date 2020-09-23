@@ -18,4 +18,4 @@ Now include the `bundle.js` in your HTML.
 
 ## Try it
 
-[test.html](https://htmlpreview.github.io/?https://github.com/tgraupmann/browserify_zlib/blob/master/test.html) - Here you can see that the zlib module has been bundles to allow compression/uncompression from Javascript.
+[test.html](https://htmlpreview.github.io/?https://github.com/tgraupmann/browserify_zlib/blob/master/test.html) - Here you can see that the zlib module has been bundled to allow compression/uncompression from Javascript.
